@@ -32,21 +32,43 @@
         }
     .placeholder{
             position: absolute;
-            top:25px;
-            left:55px;
+            top:35px;
+            left:45px;
             pointer-events: none;
             transition: .3s;
             padding:0 10px;
             font-weight: 800;
         }
         textarea:focus + .placeholder{
-            top:-5px;
+            top:-2px;
             background:#f3f7c6;  
             border-radius: .2rem;
         }
     button{
         width:80%;
         margin:20px;
+    }
+    @media  (max-width: 480px)  {
+        button{
+        width:80%;
+        margin:20px;
+        margin-top:50px;
+        font-size: 1.5rem;
+    }
+    textarea{
+        height: 3rem;
+        width:80%;
+        margin:10px;
+        margin-top:20px;
+        }
+    .bigBox{
+         background: #f3f7c6;
+         width: 80%;
+         height:18rem;
+         margin:auto;
+         text-align: center;
+         transform: translate(-50%,-50%);
+    }
     }
    </style>
 </head>
