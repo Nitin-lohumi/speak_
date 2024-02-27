@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speak_output</title>
+   <style>
+    
+    .bigBox{
+         position:absolute;
+         left:50%;
+         top:50%;
+         background: #f3f7c6;
+         border: 1px solid black;
+         width: 50%;
+         margin:auto;
+         text-align: center;
+         transform: translate(-50%,-50%);
+    }
+    h1{
+        text-align: center;
+        color: blue;
+        text-transform: capitalize;
+    }
+    .box1{
+            position: relative;
+        }
+     textarea{
+        height: 3rem;
+        width:80%;
+        margin:10px;
+        }
+    .placeholder{
+            position: absolute;
+            top:25px;
+            left:55px;
+            pointer-events: none;
+            transition: .3s;
+            padding:0 10px;
+            font-weight: 800;
+        }
+        textarea:focus + .placeholder{
+            top:-5px;
+            background:#f3f7c6;  
+            border-radius: .2rem;
+        }
+    button{
+        width:80%;
+        margin:20px;
+    }
+   </style>
+</head>
+<body>
+    <form class="form">
+   <div class="bigBox">
+     <h1>speak text - input</h1>
+      <div class="box">
+        <div class="box1"> 
+            <textarea name="text" id="text" id ="text"></textarea>
+            <label class="placeholder">speak_text</label>
+            </div>
+        <button onclick="speak()">click to speak text</button>
+      </div>
+   </div>
+    </form>
+</body>
+<script>
+    function speak(){
+       let a=window.speechSynthesis;
+       if(text.value==""){
+          let voice=new SpeechSynthesisUtterance("please enter some input to check the speak text");
+          a.speak(voice);
+       }
+       else{
+       let  voice= new SpeechSynthesisUtterance(`${text.value}`);
+       a.speak(voice);
+       }
+    }
+</script>
+</html>
